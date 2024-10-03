@@ -1,6 +1,5 @@
 # Python PyQt5 StopWatch
 import sys
-
 from PyQt5.QtWidgets import (QApplication, QWidget, 
                             QLabel, QPushButton, 
                             QVBoxLayout, QHBoxLayout)
@@ -64,13 +63,16 @@ class StopWatch(QWidget):
     def start(self):
         self.timer.start(10)
     
+    
     def stop(self):
         self.timer.stop()
+    
     
     def reset(self):
         self.timer.stop()
         self.time = QTime(0, 0, 0, 0)
         self.time_label.setText(self.format_time(self.time))
+    
     
     def format_time(self, time):
         hours = time.hour()
